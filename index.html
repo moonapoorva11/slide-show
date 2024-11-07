@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <style>
+        .cantainer{
+            width: fit-content;
+            margin:50px auto;
+            position: relative;
+        }
+        .slide{
+            height: 400px;
+            width: 600px;
+            object-fit: cover;
+            border: 10px;
+        }
+        .ico-action{
+            height: 90px;
+            position: absolute;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+       
+         .ico-pre{
+            left: 0;
+            top: 40%;
+
+        }
+        .ico-pre:hover{
+            transform: scale(0.8) translate(-10px);
+
+        }
+        .ico-next{
+            right: 0;
+            top: 40%;
+
+        }
+        .ico-next:hover{
+            transform: scale(0.8) translate(10px)
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="cantainer">
+        <img src="img/pic1.jpg" class="slide" id="slide"/>
+        <img src="pre.png" class="ico-action ico-pre" onclick="prev()"/>
+        <img src="next.png" class="ico-action ico-next" onclick="next()"/>
+    </div>
+    <script>
+        const images = ["img/pic1.jpg" , "img/pic2.jpg" , "img/pic3.jpg" , "img/pic4.jpg" , "img/pic5.jpg" ,"img/pic6.jpg" ,"img/pic7.jpg" ,"img/pic8.jpg" ,"img/pic9.jpg"  ];
+
+        let index = 0;
+        
+      const slide = document.getElementById("slide");
+
+      function next() {
+        if (index < images.length - 1) {
+          index++;
+        } else {
+          index = 0;
+        }
+
+        slide.src = images[index];
+      }
+
+      
+    </script>
+</body>
+</html>
